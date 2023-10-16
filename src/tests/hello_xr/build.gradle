@@ -37,7 +37,7 @@ android {
                         '-DBUILD_LOADER=ON',
                         '-DBUILD_CONFORMANCE_TESTS=OFF',
                         '-DBUILD_ALL_EXTENSIONS=ON'
-                targets "openxr_loader", "hello_xr"
+                targets "hello_xr"
             }
         }
     }
@@ -73,6 +73,10 @@ android {
 
             resValue "string", "app_name", "Hello XR (OpenGL ES)"
         }
+    }
+
+    dependencies {
+        implementation 'org.khronos.openxr:openxr_loader_for_android:1.0.30'
     }
 }
 
