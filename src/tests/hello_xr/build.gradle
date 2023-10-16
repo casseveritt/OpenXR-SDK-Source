@@ -28,6 +28,8 @@ android {
         versionName = project.versionOpenXR.toString() + project.versionQualifier
         versionCode = project.versionOpenXR.getVersionCode()
 
+	ndk { abiFilter 'arm64-v8a' }
+
         externalNativeBuild {
             cmake {
                 arguments '-DBUILD_API_LAYERS=OFF',
@@ -43,9 +45,6 @@ android {
         main {
             manifest.srcFile 'AndroidManifest.xml'
             res.srcDir 'android_resources'
-        }
-        Vulkan {
-            res.srcDir 'android_resources/vulkan'
         }
         OpenGLES {
             res.srcDir 'android_resources/opengles'
@@ -73,13 +72,6 @@ android {
             externalNativeBuild.cmake.arguments += '-DHELLOXR_DEFAULT_GRAPHICS_PLUGIN=OpenGLES'
 
             resValue "string", "app_name", "Hello XR (OpenGL ES)"
-        }
-        Vulkan {
-            dimension 'api'
-            applicationIdSuffix '.vulkan'
-            externalNativeBuild.cmake.arguments += '-DHELLOXR_DEFAULT_GRAPHICS_PLUGIN=Vulkan'
-
-            resValue "string", "app_name", "Hello XR (Vulkan)"
         }
     }
 }
