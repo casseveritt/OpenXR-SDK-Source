@@ -83,6 +83,7 @@ if(Vulkan_FOUND)
     )
 endif()
 
+find_package(OpenXR REQUIRED CONFIG)
 target_link_libraries(hello_xr OpenXR::openxr_loader)
 if(TARGET openxr-gfxwrapper)
     target_link_libraries(hello_xr openxr-gfxwrapper)
