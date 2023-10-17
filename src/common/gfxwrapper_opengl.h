@@ -345,7 +345,7 @@ CGLError CGLUpdateContext(CGLContextObj ctx);
 #endif
 #endif
 #include <GLES3/gl3ext.h>
-#include <GL/gl_format.h>
+//#include <GL/gl_format.h>
 
 #define GRAPHICS_API_OPENGL_ES 1
 #define OUTPUT_PATH "/sdcard/"
