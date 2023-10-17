@@ -58,7 +58,6 @@ source_group("Shaders" FILES ${VULKAN_SHADERS})
 compile_glsl(run_hello_xr_glsl_compiles ${VULKAN_SHADERS})
 
 add_dependencies(hello_xr
-    generate_openxr_header
     run_hello_xr_glsl_compiles
 )
 

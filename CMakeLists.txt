@@ -104,7 +104,6 @@ elseif(NOT ANDROID)
     include(GNUInstallDirs)
 endif()
 
-add_subdirectory(include)
 add_subdirectory(src)
 
 # uninstall target
